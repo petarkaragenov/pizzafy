@@ -1,0 +1,135 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Cairo');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+* {
+    font-family: Cairo, sans-serif;
+}
+
+html, body, #adminPanel, #app, .pizza-app, .admin-panel, .admin-panel > .row {
+    min-height: 100vh;
+}
+
+.navbar-dark {
+    background: #343a40;
+}
+
+table {
+    border-radius: 6px !important;
+}
+
+.col-sm-2 {
+    padding: 0 !important;
+}
+
+.row {
+    margin: 0 !important;
+}
+
+.card-header-dark {
+    background: #343a40;
+    color: white;
+}
+
+.card-shadow {
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.2);
+}
+
+.authentication-card {
+    .form-group {
+        margin: 8px 0 !important;
+    }
+}
+
+a {
+    color: white;
+    margin: 0 8px;
+    text-decoration: none;
+
+    &:hover {
+        color: darken(#fff, 10%);
+        text-decoration: none;
+    }
+}
+
+.button {
+    padding: 10px 16px;
+    margin: 4px 3px;
+    border-radius: 21.5px;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+}
+
+.button-update {
+    background-color: #2630a5;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: darken(#2630a5, 10%);
+    }
+}
+
+.button-delete {
+    background-color: #f91616;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: darken(#f91616, 10%);
+    }
+}
+
+.button-order {
+    background-color: #343A40;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: darken(#343A40, 10%);
+    }
+}
+
+.button-logout {
+    background-color: #19dbe5;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: darken(#19dbe5, 10%);
+    }
+}
+
+.button-success {
+    background-color: #53f422;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: darken(#53f422, 10%);
+    }
+}
+
+.button-change {
+    background-color: #1bb1f7;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: darken(#1bb1f7, 10%);
+    }
+}
+
+.button--link {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+
+    &:hover {
+        color: darken(#fff, 10%);
+    }
+}
