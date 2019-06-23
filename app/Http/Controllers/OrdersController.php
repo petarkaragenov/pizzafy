@@ -36,4 +36,10 @@ class OrdersController extends Controller
     public function show_customer($id) {
         return response()->json(Order::find($id)->user);
     }
+
+    public function destroy(Order $order) {
+        $order->delete();
+
+        return response()->json(Order::all());
+    }
 }

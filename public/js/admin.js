@@ -2339,7 +2339,17 @@ __webpack_require__.r(__webpack_exports__);
       _this.orders = res.data;
     });
   },
-  methods: {}
+  methods: {
+    deleteOrder: function deleteOrder(id) {
+      var _this2 = this;
+
+      axios.post("/api/orders/".concat(id), {
+        '_method': 'delete'
+      }).then(function (res) {
+        _this2.orders = res.data;
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -39708,44 +39718,57 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row justify-content-center" }, [
-    _c("div", { staticClass: "col-md-10" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("table", { staticClass: "table" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.orders, function(order) {
-              return _c("tr", { key: order.id }, [
-                _c("td", [_vm._v(_vm._s(order.id))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(order.user_id))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(order.amount))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(order.status))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(order.created_at))]),
-                _vm._v(" "),
+    _c("div", { staticClass: "container" }, [
+      _c("table", { staticClass: "table" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.orders, function(order) {
+            return _c("tr", { key: order.id }, [
+              _c("td", [_vm._v(_vm._s(order.id))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(order.user_id))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(order.amount))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(order.status))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(order.created_at))]),
+              _vm._v(" "),
+              _c(
+                "td",
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "button button--link d-flex",
+                      attrs: { to: "/admin/orders/" + order.id }
+                    },
+                    [_vm._v("View")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("td", [
                 _c(
-                  "td",
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "button button--link",
-                        attrs: { to: "/admin/orders/" + order.id }
-                      },
-                      [_vm._v("View")]
-                    )
-                  ],
-                  1
+                  "button",
+                  {
+                    staticClass: "button button--link",
+                    on: {
+                      click: function($event) {
+                        return _vm.deleteOrder(order.id)
+                      }
+                    }
+                  },
+                  [_vm._v("Delete")]
                 )
               ])
-            }),
-            0
-          )
-        ])
+            ])
+          }),
+          0
+        )
       ])
     ])
   ])
@@ -39766,6 +39789,8 @@ var staticRenderFns = [
         _c("th", [_vm._v("Status")]),
         _vm._v(" "),
         _c("th", [_vm._v("Created At")]),
+        _vm._v(" "),
+        _c("th"),
         _vm._v(" "),
         _c("th")
       ])

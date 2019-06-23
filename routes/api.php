@@ -34,6 +34,7 @@ Route::get('/orders/{order}', 'OrdersController@show');
 Route::get('/orders/{order}/items', 'OrdersController@show_items');
 Route::get('/orders/{order}/customer', 'OrdersController@show_customer');
 Route::patch('/orders/{order}', 'OrdersController@update');
+Route::delete('/orders/{order}', 'OrdersController@destroy');
 Route::get('/orders/user/{user}', 'OrdersController@user_orders');
 
 
