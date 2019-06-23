@@ -23,7 +23,7 @@
                             <td>{{ item.quantity }}</td>
                             <td>{{ item.price }}</td>
                             <td>${{ item.total }}</td>
-                            <td><i @click="removeFromCart(items.indexOf(item))" class="close fas fa-times-circle fa-2x"></i></td>
+                            <td><i @click="removeFromCart(items.indexOf(item), item.price)" class="close fas fa-times-circle fa-2x"></i></td>
                         </tr>
                     </tbody>
                 </table>
@@ -86,8 +86,9 @@ export default {
         }
     },
     methods: {
-        removeFromCart(id) {
-            this.$store.items.mutations.removeItem(id);
+        removeFromCart(index, price) {
+            this.$store.items.mutations.removeItem(index);
+            this.totalPrice = (this.totalPrice - parseFloat(price)).toFixed(2)
             if (this.items.length === 0) {
                 this.$router.push('/');
             }

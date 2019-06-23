@@ -2006,8 +2006,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   methods: {
-    removeFromCart: function removeFromCart(id) {
-      this.$store.items.mutations.removeItem(id);
+    removeFromCart: function removeFromCart(index, price) {
+      this.$store.items.mutations.removeItem(index);
+      this.totalPrice = (this.totalPrice - parseFloat(price)).toFixed(2);
 
       if (this.items.length === 0) {
         this.$router.push('/');
@@ -40291,7 +40292,10 @@ var render = function() {
                           staticClass: "close fas fa-times-circle fa-2x",
                           on: {
                             click: function($event) {
-                              _vm.removeFromCart(_vm.items.indexOf(item))
+                              _vm.removeFromCart(
+                                _vm.items.indexOf(item),
+                                item.price
+                              )
                             }
                           }
                         })
@@ -40806,7 +40810,7 @@ var render = function() {
                 fn: function() {
                   return [
                     _c("SidebarSection", {
-                      attrs: { sectionTitle: "Menage Profile" }
+                      attrs: { sectionTitle: "Manage Profile" }
                     }),
                     _vm._v(" "),
                     _c("SidebarLink", {

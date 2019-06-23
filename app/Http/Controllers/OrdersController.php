@@ -10,11 +10,11 @@ use App\OrderItem;
 class OrdersController extends Controller
 {
     public function index() {
-        return response()->json(Order::all());
+        return response()->json(Order::orderBy('created_at', 'desc')->get());
     }
 
     public function user_orders($id) {
-        return response()->json(Order::where('user_id', '=', $id)->get());
+        return response()->json(Order::orderBy('created_at', 'desc')->where('user_id', '=', $id)->get());
     }
 
     public function show(Order $order) {

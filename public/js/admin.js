@@ -38918,7 +38918,7 @@ var render = function() {
                 fn: function() {
                   return [
                     _c("SidebarSection", {
-                      attrs: { sectionTitle: "Menage Pizzas" }
+                      attrs: { sectionTitle: "Manage Pizzas" }
                     }),
                     _vm._v(" "),
                     _c("SidebarLink", {
@@ -38930,7 +38930,7 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("SidebarSection", {
-                      attrs: { sectionTitle: "Menage Orders" }
+                      attrs: { sectionTitle: "Manage Orders" }
                     }),
                     _vm._v(" "),
                     _c("SidebarLink", {

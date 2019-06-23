@@ -4,7 +4,7 @@
             <div class="col-sm-2" style="padding: 0 !important">
                 <Sidebar>
                     <template v-slot:sidebarLinks>
-                        <SidebarSection sectionTitle="Menage Profile" />
+                        <SidebarSection sectionTitle="Manage Profile" />
                         <SidebarLink to="/profile/orders" linkText="Orders" />
                         <SidebarLink to="/profile/update" linkText="Update Profile" />
                         <SidebarLink to="/profile/delete" linkText="Delete Profile" />

@@ -4,10 +4,10 @@
             <div class="col-sm-2" style="padding: 0 !important">
                 <Sidebar>
                     <template v-slot:sidebarLinks>
-                        <SidebarSection sectionTitle="Menage Pizzas" />
+                        <SidebarSection sectionTitle="Manage Pizzas" />
                         <SidebarLink to="/admin" linkText="Pizza Dashboard" />
                         <SidebarLink to="/admin/create" linkText="Add New" />
-                        <SidebarSection sectionTitle="Menage Orders" />
+                        <SidebarSection sectionTitle="Manage Orders" />
                         <SidebarLink to="/admin/orders" linkText="Orders Dashboard" />
                     </template>
                 </Sidebar>
