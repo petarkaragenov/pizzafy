@@ -1,17 +1,16 @@
 <template>
     <div class="pizza-app">
-        <transition name="slide-fade">
+        <transition name="fade">
             <router-view :user="user" :items="items"></router-view>
         </transition>
     </div>
 </template>
 
 <style lang="scss" scoped>
-    .slide-fade-enter-active {
-        transition: all 0.4s ease-out;
+    .fade-enter-active {
+        transition: all 0.5s ease-out;
     }
-    .slide-fade-enter, .slide-fade-leave-to {
-        transform: translateX(100%);
+    .fade-enter, .slide-fade-leave-to {
         opacity: 0;
     }
 

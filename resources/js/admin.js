@@ -34,6 +34,7 @@ import CreatePizza from './components/admin/CreatePizza.vue';
 import EditPizza from './components/admin/EditPizza.vue';
 import Orders from './components/admin/Orders.vue';
 import Order from './components/admin/Order.vue';
+import PageNotFound from './components/PageNotFound.vue';
 
 const routes = [
   {
@@ -60,6 +61,10 @@ const routes = [
     name: 'order',
     path: '/admin/orders/:id',
     component: Order
+  },
+  { 
+    path: "/admin/*", 
+    component: PageNotFound 
   }
 ]
 

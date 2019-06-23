@@ -16,6 +16,23 @@ html, body, #adminPanel, #app, .pizza-app, .admin-panel, .admin-panel > .row {
     min-height: 100vh;
 }
 
+.loading-modal {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 100px;
+    }
+}
+
 .navbar-dark {
     background: #343a40;
 }

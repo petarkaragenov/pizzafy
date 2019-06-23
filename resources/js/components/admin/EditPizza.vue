@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+        <div v-show="!isActive" class="loading-modal">
+            <img src="/storage/loading.gif" alt="Loading">
+        </div>
         <h1>Update Pizza</h1>
         <form @submit.prevent="handleOnSubmit">
             <div class="form-group">
@@ -34,7 +37,7 @@
                 <img :src="`/storage/${image}`" alt="name">
             </div>
             <div class="form-group">
-                <button class="btn btn-primary">Update</button>
+                <button class="btn btn-primary" @click="isActive=false">Update</button>
             </div>
         </form>
   </div>
@@ -50,7 +53,8 @@
                 price: '',
                 file: '',
                 image: '',
-                errors: new Errors()
+                errors: new Errors(),
+                isActive: true
             }
         },
         methods: {

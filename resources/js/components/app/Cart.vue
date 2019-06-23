@@ -1,5 +1,8 @@
 <template>
     <div class="cart-container">
+        <div v-show="!pay" class="loading-modal">
+            <img src="/storage/loading.gif" alt="Loading">
+        </div>
         <Header />
             <div class="container cart-items">
                 <table class="table" v-if="items">
@@ -45,9 +48,13 @@
                         Back
                     </router-link>
                     <button :disabled="!pay" :class="{ disabled: !pay }" class="button button-success" @click="checkout">
-                        <span v-if="pay">Proceed to Payment</span>
-                        <span v-if="!pay">Loading... {{ progress }}</span>
-                        <i class="fa fa-angle-right"></i>
+                        <span v-if="pay">
+                            Proceed to Payment
+                            <i class="fa fa-angle-right"></i>
+                        </span>
+                        <span v-if="!pay">Loading... 
+                            <img src="/storage/loading.gif" width="16" alt="Loading">
+                        </span>
                     </button>
                 </div>
             </div>
@@ -99,10 +106,7 @@ export default {
             axios({
                 method: 'post',
                 url: '/api/charge',
-                data: formData,
-                onUploadProgress: function (progressEvent) {
-                    this.progress+=Math.round( (progressEvent.loaded * 100) / progressEvent.total )
-                }
+                data: formData
             })
                 .then(res => {
                     this.$router.push('/success');

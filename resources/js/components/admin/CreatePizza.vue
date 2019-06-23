@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+        <div v-show="!isActive" class="loading-modal">
+            <img src="/storage/loading.gif" alt="Loading">
+        </div>
         <h1>Create New Pizza</h1>
         <form @submit.prevent="handleOnSubmit">
             <div class="form-group">
@@ -31,7 +34,7 @@
                 </span>
             </div>
             <div class="form-group">
-                <button class="btn btn-primary">Create</button>
+                <button class="btn btn-primary" @click="isActive=false">Create</button>
             </div>
         </form>
   </div>
@@ -46,7 +49,8 @@
                 description: '',
                 price: '',
                 file: '',
-                errors: new Errors()
+                errors: new Errors(),
+                isActive: true
             }
         },
         methods: {

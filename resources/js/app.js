@@ -43,6 +43,7 @@ import ProfileUpdate from './components/app/ProfileUpdate.vue';
 import ProfileDelete from './components/app/ProfileDelete.vue';
 import Success from './components/app/Success.vue';
 import ProfileOrders from './components/app/ProfileOrders.vue';
+import PageNotFound from './components/PageNotFound.vue';
 
 const routes = [
   {
@@ -82,6 +83,10 @@ const routes = [
       }
     ]
   },
+  { 
+    path: "*", 
+    component: PageNotFound 
+  }
 
 ]
 
